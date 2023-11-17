@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import numpy as np
 from PIL import Image
 
-logo = Image.open('C:/Users/Andres/OneDrive/Documentos/Belen/score_corrupcion/logo.png')
+logo = Image.open('logo.png')
 
 st.sidebar.image(logo, width=200)
 
