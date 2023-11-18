@@ -15,7 +15,7 @@ st.sidebar.image(logo, width=200)
 # Configura la página para usar la imagen como favicon
 #st.set_page_config(page_icon=favicon)
 
-df=pd.read_excel("predicciones2.xlsx")
+df=pd.read_excel("Base_prueba.xlsx")
 print(df.info())
 
 #st.title("Corruption Likelihood Assessment in the Public Sector")
