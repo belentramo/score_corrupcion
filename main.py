@@ -15,7 +15,7 @@ st.sidebar.image(logo, width=200)
 # Configura la página para usar la imagen como favicon
 #st.set_page_config(page_icon=favicon)
 
-df=pd.read_excel("Base_score.xlsx")
+df=pd.read_excel("predicciones2.xlsx")
 print(df.info())
 
 #st.title("Corruption Likelihood Assessment in the Public Sector")
@@ -26,13 +26,13 @@ st.markdown("\n\n\n\n\n\n\n")
 
 st.sidebar.title("Información")
 
-filtro_region=st.sidebar.selectbox("Región",df["Region"].unique())
-filtro_organismo=st.sidebar.selectbox("Organismo",df["Organismo"].unique())
-df_filtered = df.query('Region == @filtro_region and Organismo == @filtro_organismo')
+filtro_region=st.sidebar.selectbox("Region",df["Region"].unique())
+filtro_organismo=st.sidebar.selectbox("organismo",df["organismo"].unique())
+df_filtered = df.query('Region == @filtro_region and organismo == @filtro_organismo')
 
 st.dataframe(df_filtered)
 
-data = df_filtered['score_pred']
+data = df_filtered['score_exp']
 
 hist_data = np.histogram(data, bins=20)
 
@@ -44,7 +44,7 @@ fig = go.Figure(data=[bar, line])
 
 fig.update_layout(
     title={
-        'text': "Histograma de score_pred",
+        'text': "Histograma de score_exp",
         'y':0.9,
         'x':0.5,
         'xanchor': 'center',
